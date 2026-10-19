@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ligtas Tawid is a sensor-based traffic light prototype designed to create safer pedestrian crossings." />
+    <title>
+      Ligtas Tawid Traffic Light
+    </title>
+    <link rel="preload" as="image" href="uploads/bernardino.jpg" />
+    <link rel="preload" as="image" href="uploads/matuto.jpg" />
+    <link rel="preload" as="image" href="uploads/revaula.jpg" />
+    <link rel="preload" as="image" href="uploads/sacatani.jpg" />
+    <link rel="preload" as="image" href="uploads/villafuerte.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main id="top">
+      <nav class="route-nav" aria-label="Page sections">
+        <a class="route-brand" href="#top" aria-label="Ligtas Tawid home">
+          <span class="brand-mark">
+            LT
+          </span>
+          <span>
+            <b>
+              Ligtas Tawid
+            </b>
+            <small>
+              Sensor-based traffic system
+            </small>
+          </span>
+        </a>
+        <div class="route-links">
+          <a href="#about">
+            About
+          </a>
+          <a href="#objectives">
+            Objectives
+          </a>
+          <a href="#process">
+            Process
+          </a>
+          <a href="#components">
+            Components
+          </a>
+          <a href="#team">
+            Team
+          </a>
+        </div>
+      </nav>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Safety that sees you
+          </p>
+          <h1>
+            Ligtas Tawid
+          </h1>
+          <p class="hero-intro">
+            “A Smarter Signal, A Safer Crossing”
+          </p>
+        </div>
+        <div class="cloud-layer" aria-hidden="true">
+          <span class="cloud cloud-one">
+          </span>
+          <span class="cloud cloud-two">
+          </span>
+          <span class="cloud cloud-three">
+          </span>
+          <span class="cloud cloud-four">
+          </span>
+        </div>
+        <svg class="hero-scene" viewBox="0 250 1600 510" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A T-shaped traffic light on a pedestrian island between two roads">
+          <defs>
+            <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3f5661">
+              </stop>
+              <stop offset=".42" stop-color="#263b45">
+              </stop>
+              <stop offset="1" stop-color="#0d1a21">
+              </stop>
+            </linearGradient>
+            <linearGradient id="island" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffe27a">
+              </stop>
+              <stop offset=".36" stop-color="#f2c230">
+              </stop>
+              <stop offset="1" stop-color="#d49313">
+              </stop>
+            </linearGradient>
+          </defs>
+          <path class="grass" d="M0 377h1600v383H0z">
+          </path>
+          <path class="road-surface" fill="url(#road)" d="m611 368-611 76v316h718l72-392Z">
+          </path>
+          <path class="road-surface" fill="url(#road)" d="m810 368 72 392h718V444l-611-76Z">
+          </path>
+          <path class="road-edge" d="M0 431 609 363l19 10L0 485Z">
+          </path>
+          <path class="road-edge" d="m991 363 609 68v54L972 373Z">
+          </path>
+          <path class="crosswalk" d="M746 530h38l-11 102h-61Zm-107 0h37l-78 102h-61Zm-108 0h38L423 632h-61Zm-107 0h37L248 632h-61Zm-108 0h38L73 632H12Zm501 0h37l34 102h-61Zm107 0h37l102 102h-61Zm107 0h38l169 102h-61Zm108 0h37l237 102h-61Zm107 0h38l304 102h-61Z">
+          </path>
+          <path class="curb-light" d="m792 365-115 395h205l-74-395Z">
+          </path>
+          <path class="island" fill="url(#island)" d="m798 365-82 395h126l-39-395Z">
+          </path>
+          <g transform="translate(0 210)">
+            <ellipse cx="800" cy="381" rx="71" ry="10" fill="#17262c" opacity=".35">
+            </ellipse>
+            <path class="pole" d="M793 179h14v196h-14zM590 172h420v14H590z">
+            </path>
+            <path class="pole-end" d="M584 165h15v28h-15zm417 0h15v28h-15z">
+            </path>
+            <g class="signal" transform="translate(616 137)">
+              <rect width="72" height="102" rx="14">
+              </rect>
+              <circle class="red active" cx="36" cy="27" r="14">
+              </circle>
+              <circle class="amber" cx="36" cy="52" r="11">
+              </circle>
+              <circle class="green" cx="36" cy="78" r="11">
+              </circle>
+            </g>
+            <g class="signal back" transform="translate(912 137)">
+              <rect width="72" height="102" rx="14">
+              </rect>
+              <path d="M12 14h48M12 88h48">
+              </path>
+              <rect x="26" y="40" width="20" height="22" rx="4" class="box">
+              </rect>
+            </g>
+            <g class="sensor" transform="translate(770 210)">
+              <rect width="60" height="42" rx="12">
+              </rect>
+              <circle cx="30" cy="21" r="9">
+              </circle>
+              <path d="M13 10 5 2m42 8 8-8">
+              </path>
+            </g>
+          </g>
+        </svg>
+      </section>
+      <div class="hazard" aria-hidden="true">
+      </div>
+      <section class="section about" id="about">
+        <div class="asphalt-stamp">
+          01 /
+          <br/>
+          About
+        </div>
+        <div class="section-label">
+          <span>
+            01
+          </span>
+          <p>
+            About the system
+          </p>
+        </div>
+        <div class="about-layout">
+          <div class="about-copy">
+            <p class="eyebrow yellow">
+              Built around people
+            </p>
+            <h2>
+              Crossing the road should never feel like a risk.
+            </h2>
+            <div class="about-columns">
+              <p>
+                <strong>
+                  Ligtas Tawid
+                </strong>
+                is a sensor-based traffic light prototype designed to make pedestrian crossings more responsive. It monitors the number of people waiting and activates a red light for vehicles once the configured threshold is reached.
+              </p>
+              <p>
+                For exceptional situations, authorized administrators can bypass the automated flow and change system configurations through the control panel—keeping human judgment at the center of every decision.
+              </p>
+            </div>
+            <ul class="chips">
+              <li>
+                Sensor-based counting
+              </li>
+              <li>
+                Adjustable threshold
+              </li>
+              <li>
+                Admin override
+              </li>
+            </ul>
+          </div>
+          <aside class="meaning-wrap">
+            <svg class="road-sign floating-sign" viewBox="0 0 100 100" aria-hidden="true">
+              <polygon points="50,3 97,50 50,97 3,50" fill="#f2c230" stroke="#1b1e21" stroke-width="5">
+              </polygon>
+              <circle cx="50" cy="30" r="6">
+              </circle>
+              <path d="M50 40V60M50 46l-10 8M50 46l10 8M50 60l-8 15M50 60l8 15" stroke="#1b1e21" stroke-width="5" stroke-linecap="round" fill="none">
+              </path>
+            </svg>
+            <div class="meaning-card">
+              <span>
+                Filipino
+              </span>
+              <h3>
+                Ligtas Tawid
+              </h3>
+              <p>
+                /lig·tas ta·wid/
+              </p>
+              <strong>
+                “Safe crossing”
+              </strong>
+            </div>
+            <div class="sign-pole">
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="section objectives" id="objectives">
+        <header class="section-heading">
+          <div class="section-label">
+            <span>
+              02
+            </span>
+            <p>
+              Our objectives
+            </p>
+          </div>
+          <div>
+            <p class="eyebrow yellow">
+              The safety standard
+            </p>
+            <h2>
+              Designed for the moments that matter.
+            </h2>
+          </div>
+        </header>
+        <div class="objective-grid">
+          <article class="objective-card green">
+            <div class="objective-top">
+              <span>
+                01
+              </span>
+              <div class="line-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z">
+                  </path>
+                  <circle cx="12" cy="12" r="2.5">
+                  </circle>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3>
+                Sense with purpose
+              </h3>
+              <p>
+                Detect and count waiting pedestrians, turning real-time presence into safer signal decisions.
+              </p>
+            </div>
+            <span class="card-arrow">
+              ↗
+            </span>
+          </article>
+          <article class="objective-card amber">
+            <div class="objective-top">
+              <span>
+                02
+              </span>
+              <div class="line-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h10M18 6h2M4 18h2m4 0h10M4 12h3m4 0h9">
+                  </path>
+                  <circle cx="16" cy="6" r="2">
+                  </circle>
+                  <circle cx="8" cy="18" r="2">
+                  </circle>
+                  <circle cx="9" cy="12" r="2">
+                  </circle>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3>
+                Adapt when needed
+              </h3>
+              <p>
+                Give authorized administrators direct control to adjust thresholds and bypass automation.
+              </p>
+            </div>
+            <span class="card-arrow">
+              ↗
+            </span>
+          </article>
+          <article class="objective-card red">
+            <div class="objective-top">
+              <span>
+                03
+              </span>
+              <div class="line-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3 4.5 6v5.3c0 4.6 3.1 8.2 7.5 9.7 4.4-1.5 7.5-5.1 7.5-9.7V6L12 3Z">
+                  </path>
+                  <path d="m8.5 12 2.2 2.2 4.8-5">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3>
+                Protect every crossing
+              </h3>
+              <p>
+                Reduce unnecessary waiting while prioritizing a clear, predictable, and protected crossing window.
+              </p>
+            </div>
+            <span class="card-arrow">
+              ↗
+            </span>
+          </article>
+        </div>
+      </section>
+      <section class="section process" id="process">
+        <div class="process-intro">
+          <div>
+            <div class="section-label">
+              <span>
+                03
+              </span>
+              <p>
+                How it works
+              </p>
+            </div>
+            <p class="eyebrow ink">
+              From waiting to walking
+            </p>
+            <h2>
+              Three steps to a safer street.
+            </h2>
+          </div>
+          <p class="process-lede">
+            The system turns a busy, unpredictable crossing into a simple sequence anyone can understand.
+          </p>
+        </div>
+        <div class="process-list">
+          <article>
+            <span>
+              01
+            </span>
+            <div class="process-copy">
+              <p>
+                Detect
+              </p>
+              <h3>
+                Sensors identify waiting pedestrians.
+              </h3>
+            </div>
+            <strong>
+              Presence
+            </strong>
+            <div class="signal-dot signal-1" aria-hidden="true">
+              <i class="light-red">
+              </i>
+              <i class="light-amber">
+              </i>
+              <i class="light-green">
+              </i>
+            </div>
+          </article>
+          <article>
+            <span>
+              02
+            </span>
+            <div class="process-copy">
+              <p>
+                Decide
+              </p>
+              <h3>
+                The system checks the configured threshold.
+              </h3>
+            </div>
+            <strong>
+              Intelligence
+            </strong>
+            <div class="signal-dot signal-2" aria-hidden="true">
+              <i class="light-red">
+              </i>
+              <i class="light-amber">
+              </i>
+              <i class="light-green">
+              </i>
+            </div>
+          </article>
+          <article>
+            <span>
+              03
+            </span>
+            <div class="process-copy">
+              <p>
+                Protect
+              </p>
+              <h3>
+                Vehicles stop and people cross safely.
+              </h3>
+            </div>
+            <strong>
+              Action
+            </strong>
+            <div class="signal-dot signal-3" aria-hidden="true">
+              <i class="light-red">
+              </i>
+              <i class="light-amber">
+              </i>
+              <i class="light-green">
+              </i>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section panel" id="components">
+        <div class="section-label">
+          <span>
+            04
+          </span>
+          <p>
+            Sensors &amp; components
+          </p>
+        </div>
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow yellow">
+              Inside the prototype
+            </p>
+            <h2>
+              Simple hardware.
+              <br/>
+              Smarter decisions.
+            </h2>
+          </div>
+          <aside class="hardware-note">
+            <span>
+              System flow
+            </span>
+            <p>
+              Every component has a clear role—from detecting pedestrians to processing the count and changing the signal at the right moment.
+            </p>
+            <div>
+              <b>
+                Detect
+              </b>
+              <i>
+                →
+              </i>
+              <b>
+                Process
+              </b>
+              <i>
+                →
+              </i>
+              <b>
+                Signal
+              </b>
+            </div>
+          </aside>
+        </div>
+        <div class="panel-grid">
+          <div class="component-photo" role="img" aria-label="Blank four by three landscape photo placeholder for the hardware design">
+          </div>
+          <div class="feature-side">
+            <p class="feature-kicker">
+              Core prototype hardware
+            </p>
+            <ul class="features">
+              <li>
+                <span>
+                  01
+                </span>
+                <div>
+                  <b>
+                    Arduino Uno
+                  </b>
+                  <p>
+                    The microcontroller processes sensor readings and controls the traffic-light sequence.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>
+                  02
+                </span>
+                <div>
+                  <b>
+                    IR sensors
+                  </b>
+                  <p>
+                    Two infrared sensors detect objects and monitor pedestrian presence at the crossing.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>
+                  03
+                </span>
+                <div>
+                  <b>
+                    Traffic LEDs
+                  </b>
+                  <p>
+                    Red, yellow, and green LEDs communicate each road signal phase clearly.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>
+                  04
+                </span>
+                <div>
+                  <b>
+                    Wiring system
+                  </b>
+                  <p>
+                    Jumper wires and resistors connect every input and output into one working prototype.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section team" id="team">
+        <header class="team-heading">
+          <div>
+            <div class="section-label">
+              <span>
+                05
+              </span>
+              <p>
+                The people behind it
+              </p>
+            </div>
+            <h2>
+              One team.
+              <br/>
+              One safer way forward.
+            </h2>
+          </div>
+        </header>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="avatar-placeholder">
+              <img class="team-photo" src="/uploads/matuto.jpg" alt="Photo of Matuto"/>
+              <div class="avatar-head">
+              </div>
+              <div class="avatar-body">
+              </div>
+              <span>
+                LT
+              </span>
+            </div>
+            <h3>
+              Matuto, Rhaine Chelsy
+            </h3>
+            <p class="team-role">
+              Software Developer
+            </p>
+            <p class="team-specialty">
+              Logic &amp; control panel
+            </p>
+          </article>
+          <article class="team-card">
+            <div class="avatar-placeholder">
+              <img class="team-photo" src="/uploads/revaula.jpg" alt="Photo of Revaula"/>
+              <div class="avatar-head">
+              </div>
+              <div class="avatar-body">
+              </div>
+              <span>
+                LT
+              </span>
+            </div>
+            <h3>
+              Revaula, Mark Daniel
+            </h3>
+            <p class="team-role">
+              Systems Engineer
+            </p>
+            <p class="team-specialty">
+              Sensors &amp; hardware
+            </p>
+          </article>
+          <article class="team-card">
+            <div class="avatar-placeholder">
+              <img class="team-photo" src="/uploads/bernardino.jpg" alt="Photo of Bernardino"/>
+              <div class="avatar-head">
+              </div>
+              <div class="avatar-body">
+              </div>
+              <span>
+                LT
+              </span>
+            </div>
+            <h3>
+              Bernardino, John Renz
+            </h3>
+            <p class="team-role">
+              Project Lead
+            </p>
+            <p class="team-specialty">
+              Strategy &amp; coordination
+            </p>
+          </article>
+          <article class="team-card">
+            <div class="avatar-placeholder">
+              <img class="team-photo" src="/uploads/sacatani.jpg" alt="Photo of Sacatani"/>
+              <div class="avatar-head">
+              </div>
+              <div class="avatar-body">
+              </div>
+              <span>
+                LT
+              </span>
+            </div>
+            <h3>
+              Sacatani, Juliana Mae
+            </h3>
+            <p class="team-role">
+              Research Lead
+            </p>
+            <p class="team-specialty">
+              Safety &amp; user testing
+            </p>
+          </article>
+          <article class="team-card">
+            <div class="avatar-placeholder">
+              <img class="team-photo" src="/uploads/villafuerte.jpg" alt="Photo of Villafuerte"/>
+              <div class="avatar-head">
+              </div>
+              <div class="avatar-body">
+              </div>
+              <span>
+                LT
+              </span>
+            </div>
+            <h3>
+              Villafuerte, Angela Franceska
+            </h3>
+            <p class="team-role">
+              Creative Lead
+            </p>
+            <p class="team-specialty">
+              Crafts &amp; booth design
+            </p>
+          </article>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-top">
+          <span class="brand-mark">
+            LT
+          </span>
+          <span>
+            Safe crossing / Smart city / Human first
+          </span>
+          <div class="footer-signal" aria-hidden="true">
+            <i class="r">
+            </i>
+            <i class="a">
+            </i>
+            <i class="g">
+            </i>
+          </div>
+        </div>
+        <h2>
+          Every safe journey begins with a
+          <em>
+            safer crossing.
+          </em>
+        </h2>
+        <div class="footer-actions">
+          <nav class="foot-nav" aria-label="Footer sections">
+            <a href="#about">
+              About
+            </a>
+            <a href="#objectives">
+              Objectives
+            </a>
+            <a href="#process">
+              How it works
+            </a>
+            <a href="#components">
+              Components
+            </a>
+            <a href="#team">
+              Team
+            </a>
+          </nav>
+          <a class="footer-return" href="#top">
+            <span>
+              Return to top
+            </span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 14 7-7 7 7M12 7v12">
+              </path>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-road" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </div>
+        <div class="footer-bottom">
+          <span>
+            Ligtas Tawid Traffic Light
+          </span>
+          <span>
+            Sensor-based pedestrian safety prototype
+          </span>
+          <span>
+            2025
+          </span>
+        </div>
+      </footer>
+      <button class="back-to-top" type="button" aria-label="Return to top" title="Return to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m5 14 7-7 7 7M12 7v12">
+          </path>
+        </svg>
+      </button>
+    </main>
+    <script type="module" src="js/script.js">
+    </script>
+  </body>
+</html>
