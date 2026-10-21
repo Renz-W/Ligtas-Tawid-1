@@ -167,6 +167,23 @@ html {
   left:0;
   right:0
 }
+
+/* Hero title image */
+.hero-copy .hero-title {
+  display: block;
+  width: clamp(300px, 72vw, 900px);
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  filter: drop-shadow(0 6px 0 rgba(7, 31, 38, .5)) drop-shadow(0 18px 35px rgba(4, 23, 29, .2));
+}
+
+@media (max-width: 520px) {
+  .hero-copy .hero-title {
+    width: 88vw;
+  }
+}
+
 .hero-copy .eyebrow {
   display:flex;
   align-items:center;
@@ -788,6 +805,19 @@ html {
   padding-top:clamp(96px,12vh,140px);
   text-align:center
 }
+
+/* Hero title image */
+.hero-copy img,
+.hero h1 img,
+.hero-copy .hero-title {
+  display: block !important;
+  width: clamp(260px, 58vw, 760px) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  filter: drop-shadow(0 6px 0 rgba(7, 31, 38, .5)) drop-shadow(0 18px 35px rgba(4, 23, 29, .2));
+}
+
 .hero h1 {
   font-size:clamp(3rem,6.6vw,7rem);
   line-height:.84;
