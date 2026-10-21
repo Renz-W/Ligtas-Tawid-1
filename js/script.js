@@ -34,16 +34,48 @@ if (carousel) {
   const counter = carousel.querySelector('.carousel-count b');
   const previous = carousel.querySelector('.carousel-prev');
   const next = carousel.querySelector('.carousel-next');
+  const motionClasses = ['is-entering-next', 'is-entering-prev', 'is-leaving-next', 'is-leaving-prev'];
   let active = 0;
   let timer;
+  let cleanupTimer;
+  let ready = false;
 
-  function showSlide(index) {
-    active = (index + slides.length) % slides.length;
-    slides.forEach((slide, slideIndex) => {
-      const isActive = slideIndex === active;
-      slide.classList.toggle('is-active', isActive);
-      slide.hidden = !isActive || slide.dataset.failed === 'true';
-    });
+  function showSlide(index, direction) {
+    const target = (index + slides.length) % slides.length;
+
+    if (!ready) {
+      // first render: no animation
+      ready = true;
+      slides.forEach((slide, i) => {
+        slide.hidden = slide.dataset.failed === 'true';
+        slide.classList.toggle('is-active', i === target);
+      });
+    } else if (target !== active) {
+      const dir = direction || (target > active ? 1 : -1);
+      const outgoing = slides[active];
+      const incoming = slides[target];
+
+      clearTimeout(cleanupTimer);
+      slides.forEach((slide) => slide.classList.remove(...motionClasses));
+
+      outgoing.classList.remove('is-active');
+      outgoing.classList.add(dir > 0 ? 'is-leaving-next' : 'is-leaving-prev');
+
+      incoming.classList.add('is-active', dir > 0 ? 'is-entering-next' : 'is-entering-prev');
+
+      cleanupTimer = setTimeout(() => {
+        slides.forEach((slide) => slide.classList.remove(...motionClasses));
+      }, 700);
+
+      // restart the counter pop
+      if (counter) {
+        counter.classList.remove('is-bump');
+        void counter.offsetWidth;
+        counter.classList.add('is-bump');
+      }
+    }
+
+    active = target;
     dots.forEach((dot, dotIndex) => {
       const isActive = dotIndex === active;
       dot.classList.toggle('is-active', isActive);
@@ -58,7 +90,7 @@ if (carousel) {
 
   function startAutoplay() {
     stopAutoplay();
-    timer = window.setInterval(() => showSlide(active + 1), 5000);
+    timer = window.setInterval(() => showSlide(active + 1, 1), 5000);
   }
 
   slides.forEach((slide) => {
@@ -67,8 +99,8 @@ if (carousel) {
       slide.hidden = true;
     });
   });
-  previous?.addEventListener('click', () => { showSlide(active - 1); startAutoplay(); });
-  next?.addEventListener('click', () => { showSlide(active + 1); startAutoplay(); });
+  previous?.addEventListener('click', () => { showSlide(active - 1, -1); startAutoplay(); });
+  next?.addEventListener('click', () => { showSlide(active + 1, 1); startAutoplay(); });
   dots.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); startAutoplay(); }));
   carousel.addEventListener('mouseenter', stopAutoplay);
   carousel.addEventListener('mouseleave', startAutoplay);
